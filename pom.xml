@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.chenshu.study</groupId>
+  <artifactId>sprint-boot-helloworld</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>sprint-boot-helloworld</name>
+  <url>http://maven.apache.org</url>
+  
+  <!-- spring boot 父节点依赖,引入这个之后相关的引入就不需要添加version配置,springboot 会自动选择最合适的版本进行添加 -->
+  <parent>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-parent</artifactId>
+  		<version>1.4.7.RELEASE</version>
+  	</parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- 指定JDK版本号 -->
+    <java.version>1.8</java.version>
+  </properties>
+
+  <dependencies>
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- spring-boot-starter-wb:MVC,AOP等依赖包 -->
+    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-web</artifactId>
+    	<!-- 由于上面已经指定了版本号 所以此处不需要指定版本号 -->
+    </dependency>
+    
+    <dependency>
+    	<groupId>com.alibaba</groupId>
+    	<artifactId>fastjson</artifactId>
+    	<version>1.2.45</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-devtools</artifactId>
+    	<optional>true</optional>
+    	<scope>true</scope>
+	</dependency>
+	
+  </dependencies>
+  
+  <!-- 构建节点 -->
+  <build>
+  	<plugins>
+  		<!-- 在这里添加springloader plugin -->
+  		<!-- <plugin>
+  			<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-maven-plugin</artifactId>
+  			<dependencies>
+  				<dependency>
+    				<groupId>org.springframework</groupId>
+    				<artifactId>springloaded</artifactId>
+    				<version>1.2.8.RELEASE</version>
+				</dependency>
+  			</dependencies>
+  			<executions>
+  				<execution>
+  					<goals>
+  						<goal>repackage</goal>
+  					</goals>
+  					<configuration>
+  						<classifier>exec</classifier>
+  					</configuration>
+  				</execution>
+  			</executions>
+  		</plugin> -->
+  		
+  		<!-- sprinbBoot+devtools 热部署 -->
+  		<plugin>
+  			<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-maven-plugin</artifactId>
+  			<configuration>
+  				<!-- fork:如果没有该项配置,这个devtoos不会起作用,即应用不会restart -->
+  				<fork>true</fork>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+  
+</project>
