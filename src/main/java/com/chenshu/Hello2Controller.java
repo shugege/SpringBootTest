@@ -1,4 +1,4 @@
-package sprint_boot_helloworld;
+package com.chenshu;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +8,7 @@ public class Hello2Controller {
 	
 	@RequestMapping("/helloNew")
 	public String helloNew() {
-		return "new hello-2018-01-23 00";
+		return "new hello-2018-01-23";
 	}
 
 }

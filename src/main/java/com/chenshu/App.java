@@ -1,4 +1,4 @@
-package sprint_boot_helloworld;
+package com.chenshu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

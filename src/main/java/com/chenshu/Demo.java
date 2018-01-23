@@ -1,4 +1,4 @@
-package sprint_boot_helloworld;
+package com.chenshu;
 
 import java.util.Date;
 
