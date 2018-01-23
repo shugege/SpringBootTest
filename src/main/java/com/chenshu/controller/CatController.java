@@ -34,5 +34,10 @@ public class CatController {
 	public Iterable<Cat> getAll() {
 		return catService.getAll();
 	}
+	
+	@RequestMapping("/findByCatName")
+	public Cat findByCatName(String catName) {
+		return catService.findByCatName(catName);
+	}
 
 }
