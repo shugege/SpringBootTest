@@ -23,6 +23,17 @@ spring:
   #thymeleaf的配置信息
   thymeleaf:
     cache: false #关闭本地缓存
+  
+  #freemarker的配置信息
+  freemarker:
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html;
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
         
 #SERVICE的配置信息
 server:

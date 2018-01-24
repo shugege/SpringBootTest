@@ -14,5 +14,11 @@ public class TemplatesController {
 		map.put("name", "jack");
 		return "hello";
 	}
+	
+	@RequestMapping("/helloFtl")
+	public String helloFtl(Map<String,Object> map) {
+		map.put("name", "andy");
+		return "helloFtl";
+	}
 
 }
