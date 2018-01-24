@@ -1,0 +1,30 @@
+spring: 
+  #数据库配置信息
+  datasource: 
+    url: jdbc:oracle:thin:@192.168.40.99:1521:orcl
+    username: scott
+    password: tiger
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    dbcp:
+      max-active: 20
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10
+
+  #JPA的配置信息
+  jpa:
+    database: ORACLE
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        
+  #thymeleaf的配置信息
+  thymeleaf:
+    cache: false #关闭本地缓存
+        
+#SERVICE的配置信息
+server:
+  port: 8081
+  context-path: /springboot
