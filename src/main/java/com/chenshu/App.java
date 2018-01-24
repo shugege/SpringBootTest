@@ -1,5 +1,7 @@
 package com.chenshu;
 
+import java.nio.charset.Charset;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
@@ -44,6 +46,8 @@ public class App /*extends WebMvcConfigurerAdapter*/{
     	
     	//1.需要定义一个convert转换消息的对象
     	FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+    	//设置字符集,否则页面显示乱码
+    	fastConverter.setDefaultCharset(Charset.forName("UTF-8"));
     	
     	//2.添加fastJson的配置信息,比如：是否要格式化返回的JSON数据
     	FastJsonConfig fastJsonConfig = new FastJsonConfig();
